@@ -50,7 +50,8 @@ class _CandleStickViewState extends State<CandleSticksView> {
     });
   }
 
-  void _onHorizontalDrag(double offset) {
+  void _onDragUpdate(double offset) {
+    debugPrint(offset.toString());
     setState(() {
       double newOffset = _painterConfig.viewOffset - offset;
 
@@ -96,19 +97,19 @@ class _CandleStickViewState extends State<CandleSticksView> {
           ),
 
           onHorizontalDragStart: (DragStartDetails details) => {
-            debugPrint("Drag Start: ${details}")
+            debugPrint("Drag Start: {details}")
           },
           onHorizontalDragUpdate: (DragUpdateDetails details) => {
-            _onHorizontalDrag(details.primaryDelta)
+            _onDragUpdate(details.primaryDelta)
           },
           onHorizontalDragEnd: (DragEndDetails details) => {
-            debugPrint("Drag End: ${details}")
+            debugPrint("Drag End: {details}")
           },
           onHorizontalDragCancel: () => {
             debugPrint("Drag Canceled")
           },
           onHorizontalDragDown: (DragDownDetails details) => {
-            debugPrint("Drag Down: ${details}")
+            debugPrint("Drag Down: {details}")
           },
         ),
       );
