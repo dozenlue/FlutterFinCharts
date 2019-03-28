@@ -37,7 +37,8 @@ class StockData {
   }
 
   static
-  Future<StockData> loadFromBundle(AssetBundle bundle, String path) {
+  Future<StockData> loadFromBundle(AssetBundle bundle, String symbol) {
+    String path = "stocks/" + symbol + "/k_day.json";
     StockData stockData = StockData.getBySourcePath(path);
     
     if (stockData == null) {

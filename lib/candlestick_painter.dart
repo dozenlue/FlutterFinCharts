@@ -133,19 +133,6 @@ class CandleStickPainter extends CustomPainter {
       }
       
     }
-
-    TextSpan text = TextSpan(
-      text: _data.name,
-      style: TextStyle(color: Colors.black),
-    );
-
-    TextPainter painter = TextPainter(
-      text: text,
-      textDirection: TextDirection.ltr,
-    );
-
-    painter.layout();
-    painter.paint(canvas, Offset(size.width / 2, size.height / 2));
   }
 
   @override

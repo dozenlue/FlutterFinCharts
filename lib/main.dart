@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: StockViewPage(),
+      home: StockViewPage("00700"),
     );
   }
 }
