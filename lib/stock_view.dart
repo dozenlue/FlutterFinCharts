@@ -20,11 +20,16 @@ class _StockViewPageState extends State<StockViewPage> {
   _StockViewPageState(this._symbol);
 
   @override
-  Widget build(BuildContext context) {
+  void didChangeDependencies() {
     StockData.loadFromBundle(DefaultAssetBundle.of(context), _symbol).then(
       (data) { _onDataReady(data); }
     );
 
+    super.didChangeDependencies();
+  }
+
+  @override
+  Widget build(BuildContext context) {    
     if (_data != null) {
       return Scaffold(
         appBar: AppBar(
